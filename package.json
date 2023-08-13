@@ -1,0 +1,18 @@
+{
+  "name": "e-commerce-mockup-html-tailwind-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watchTailwind" : "tailwindcss -i ./src/main.css -o ./dist/style.css --watch",
+    "watchTypescript" : "tsc --watch",
+    "dev": "start npm run watchTailwind && start npm run watchTypescript"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.1.6"
+  }
+}
