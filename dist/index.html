@@ -6,8 +6,17 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="js/index.js" defer></script>
+    <script src="js/components/navbar.js" defer></script>
+    <script src="js/components/footer.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <h1 class="bg-red-400 font-bold underline italic">Hello tailwind</h1>
+<body class="flex flex-col min-h-screen">
+    <my-navbar></my-navbar>
+    <div class="flex-1 flex justify-center">
+        <main class="max-w-[1240px] w-full mx-[20px]">
+            a
+        </main>
+    </div>
+    <my-footer></my-footer>
 </body>
 </html>
