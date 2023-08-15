@@ -1,57 +1,28 @@
 "use strict";
-class Navbar extends HTMLElement {
-    constructor() {
-        super();
-        const title = 'LOGO';
-        const links = [
-            { name: 'Fruits', to: 'fruits.html' },
-            { name: 'Veggetables', to: 'vegg.html' },
-            { name: 'Others', to: 'others.html' },
-        ];
-        const shadowRoot = this.attachShadow({ mode: 'open' });
-        const content = `
-            <style>
-                * {
-                    box-sizing: border-box;
-                }
-                nav {
-                    width: 100%;
-                    padding-left:20px;
-                    padding-right:20px;
-                }
-                .nav-content-container{
-                    max-width: 1240px;
-                    margin-left:auto;
-                    margin-right:auto;
-
-                    display: flex;
-                    align-items: center;
-                    gap: 30px;
-                }
-                .links-container{
-                    display: flex;
-                    gap: 20px;
-                }
-                a {
-                    text-decoration: none;
-                    padding-top: 10px;
-                    padding-bottom: 10px;
-                    padding-inline: 30px;
-                    border-radius: 15px;
-                    color: #878787;
-                    background-color: #ebebeb;
-                }
-            </style>
-            <nav>
-                <div class='nav-content-container'>
-                    <h1>${title}</h1>
-                    <div class='links-container'>
-                        ${links.map(link => (`<a href=${link.to}>${link.name}</a>`)).join('')}
-                    </div>
-                </div>
-            </nav>
-        `;
-        shadowRoot.innerHTML = content;
+const navButton = document.querySelector('#navButton');
+const openNavIcon = document.querySelector('#openNavIcon');
+const closeNavIcon = document.querySelector('#closeNavIcon');
+const burgerMenu = document.querySelector('#burgerMenu');
+let navIsOpen = false;
+navButton === null || navButton === void 0 ? void 0 : navButton.addEventListener('click', () => {
+    navIsOpen = !navIsOpen;
+    manageCloseOrOpenIcon(navIsOpen);
+});
+function manageCloseOrOpenIcon(navIsOpen) {
+    if (navIsOpen) {
+        closeNavIcon === null || closeNavIcon === void 0 ? void 0 : closeNavIcon.classList.remove("my-hidden");
+        closeNavIcon === null || closeNavIcon === void 0 ? void 0 : closeNavIcon.classList.add('my-flex');
+        openNavIcon === null || openNavIcon === void 0 ? void 0 : openNavIcon.classList.remove("my-flex");
+        openNavIcon === null || openNavIcon === void 0 ? void 0 : openNavIcon.classList.add('my-hidden');
+        burgerMenu === null || burgerMenu === void 0 ? void 0 : burgerMenu.classList.remove('hide-burger');
+        burgerMenu === null || burgerMenu === void 0 ? void 0 : burgerMenu.classList.add('show-burger');
+    }
+    else {
+        closeNavIcon === null || closeNavIcon === void 0 ? void 0 : closeNavIcon.classList.remove('my-flex');
+        closeNavIcon === null || closeNavIcon === void 0 ? void 0 : closeNavIcon.classList.add("my-hidden");
+        openNavIcon === null || openNavIcon === void 0 ? void 0 : openNavIcon.classList.remove('my-hidden');
+        openNavIcon === null || openNavIcon === void 0 ? void 0 : openNavIcon.classList.add("my-flex");
+        burgerMenu === null || burgerMenu === void 0 ? void 0 : burgerMenu.classList.remove('show-burger');
+        burgerMenu === null || burgerMenu === void 0 ? void 0 : burgerMenu.classList.add('hide-burger');
     }
 }
-customElements.define('my-navbar', Navbar);

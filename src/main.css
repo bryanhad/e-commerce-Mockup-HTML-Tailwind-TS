@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.my-hidden{ display: none;}
+.my-flex{ display: flex;}
+
+.show-burger{ max-height: 300px; }
+.hide-burger{max-height: 0px;}
