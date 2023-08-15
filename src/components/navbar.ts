@@ -31,4 +31,3 @@ function manageCloseOrOpenIcon(navIsOpen:boolean) {
         burgerMenu?.classList.add('hide-burger')
     }
 }
-
