@@ -11,42 +11,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="flex flex-col min-h-screen">
-    <nav class="w-full px-4 h-[80px] flex justify-center border-2 border-b-slate-300">
-        <div class="max-w-[1240px] w-full flex justify-between md:justify-start items-center">
-            <a href="index.html" class="font-bold">
-                LogoGue.
-            </a>
-
-            <div class="hidden md:flex" data->
-                <a class="px-6 py-2 rounded-md text-red-400" href="link1">Home</a>
-                <a class="px-6 py-2 rounded-md " href="link2">Shop</a>
-                <a class="px-6 py-2 rounded-md " href="link3">Blog</a>
-                <a class="px-6 py-2 rounded-md " href="link4">Contact</a>
-                <a class="px-6 py-2 rounded-md " href="link5">
-                    Cart (<span id="" class=""></span>)
+        <nav class="w-full px-4 h-[80px] flex justify-center border-2 border-b-slate-300">
+            <div class="max-w-[1240px] w-full flex justify-between md:justify-start items-center">
+                <a href="index.html" class="font-bold">
+                    LogoGue.
                 </a>
+    
+                <div class="hidden md:flex" data->
+                    <a class="px-6 py-2 rounded-md " href="link1">Home</a>
+                    <a class="px-6 py-2 rounded-md " href="link2">Shop</a>
+                    <a class="px-6 py-2 rounded-md " href="link3">Blog</a>
+                    <a class="px-6 py-2 rounded-md " href="link4">Contact</a>
+                    <a class="px-6 py-2 rounded-md " href="link5">
+                        Cart (<span id="" class=""></span>)
+                    </a>
+                </div>
+    
+                <button id="navButton" class="h-[50px] w-[50px] rounded-full border-2 border-slate-300 flex md:hidden justify-center items-center">
+                    <div id="openNavIcon" class="w-[22px] aspect-[1/1] flex-col justify-evenly my-flex">
+                        <div class="bg-black h-[3px] w-full rounded-xl"></div>
+                        <div class="bg-black h-[3px] w-full rounded-xl"></div>
+                        <div class="bg-black h-[3px] w-full rounded-xl"></div>
+                    </div>
+                    <div id="closeNavIcon" class="w-[35px] aspect-[1/1] text-[25px] font-bold justify-center items-center my-hidden ">
+                        &#10005;
+                    </div>
+                </button>
+                
             </div>
-
-            <button id="navButton" class="h-[50px] w-[50px] rounded-full border-2 border-slate-300 flex md:hidden justify-center items-center">
-                <div id="openNavIcon" class="w-[22px] aspect-[1/1] flex-col justify-evenly my-flex">
-                    <div class="bg-black h-[3px] w-full rounded-xl"></div>
-                    <div class="bg-black h-[3px] w-full rounded-xl"></div>
-                    <div class="bg-black h-[3px] w-full rounded-xl"></div>
-                </div>
-                <div id="closeNavIcon" class="w-[35px] aspect-[1/1] text-[25px] font-bold justify-center items-center my-hidden ">
-                    &#10005;
-                </div>
-            </button>
-            
+        </nav>
+        <div id="burgerMenu" class="w-full px-4 flex md:hidden flex-col items-center bg-slate-100 duration-300 overflow-hidden hide-burger">
+            <a class="px-6 py-2 rounded-md " href="link1">link1</a>
+            <a class="px-6 py-2 rounded-md " href="link2">link2</a>
+            <a class="px-6 py-2 rounded-md " href="link3">link3</a>
+            <a class="px-6 py-2 rounded-md " href="link4">link4</a>
+            <a class="px-6 py-2 rounded-md " href="link5">link5</a>
         </div>
-    </nav>
-    <div id="burgerMenu" class="w-full px-4 flex md:hidden flex-col items-center bg-slate-100 duration-300 overflow-hidden hide-burger">
-        <a class="px-6 py-2 rounded-md " href="link1">link1</a>
-        <a class="px-6 py-2 rounded-md " href="link2">link2</a>
-        <a class="px-6 py-2 rounded-md " href="link3">link3</a>
-        <a class="px-6 py-2 rounded-md " href="link4">link4</a>
-        <a class="px-6 py-2 rounded-md " href="link5">link5</a>
-    </div>
+    <my-navbar></my-navbar>
     <my-footer></my-footer>
     <!-- <div class="flex-1 flex justify-center">
         <main class="max-w-[1240px] w-full mx-[20px]">
