@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watchTailwind" : "tailwindcss -i ./src/main.css -o ./dist/style.css --watch",
+    "watchTailwind" : "tailwindcss -i ./src/main.css -o ./dist/styles/tailwindsOutput.css --watch",
     "watchTypescript" : "tsc --watch",
     "dev": "start npm run watchTailwind && start npm run watchTypescript"
   },

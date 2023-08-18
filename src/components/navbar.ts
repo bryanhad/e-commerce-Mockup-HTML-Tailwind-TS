@@ -1,40 +1,8 @@
-const navButton = document.querySelector('#navButton')
-const openNavIcon = document.querySelector('#openNavIcon')
-const closeNavIcon = document.querySelector('#closeNavIcon')
-const burgerMenu = document.querySelector('#burgerMenu')
-
-let navIsOpen = false
-
-navButton?.addEventListener('click', () => {
-    navIsOpen = !navIsOpen
-    manageCloseOrOpenIcon(navIsOpen)
-})
-
-function manageCloseOrOpenIcon(navIsOpen:boolean) {
-    if (navIsOpen) {
-        closeNavIcon?.classList.remove("my-hidden")
-        closeNavIcon?.classList.add('my-flex')
-
-        openNavIcon?.classList.remove("my-flex")
-        openNavIcon?.classList.add('my-hidden')
-
-        burgerMenu?.classList.remove('hide-burger')
-        burgerMenu?.classList.add('show-burger')
-    } else {
-        closeNavIcon?.classList.remove('my-flex')
-        closeNavIcon?.classList.add("my-hidden")
-
-        openNavIcon?.classList.remove('my-hidden')
-        openNavIcon?.classList.add("my-flex")
-        
-        burgerMenu?.classList.remove('show-burger')
-        burgerMenu?.classList.add('hide-burger')
-    }
-}
-
 class Navbar extends HTMLElement {
     constructor() {
         super()
+
+        const logo = 'LogoGue.'
         const links = [
             {title:'Home', to:'home.html'},
             {title:'Shop', to:'Shop.html'},
@@ -44,46 +12,78 @@ class Navbar extends HTMLElement {
         const shadowRoot = this.attachShadow({mode: 'open'})
 
         const content = `
-        <link rel="stylesheet" href="style.css">
-        <nav class="w-full px-4 h-[80px] flex justify-center border-2 border-b-slate-300">
-            <div class="max-w-[1240px] w-full flex justify-between md:justify-start items-center">
-                <a href="index.html" class="font-bold">
-                    LogoGue.
-                </a>
+        <link rel="stylesheet" href="styles/navbar.css">
+        
+        <nav>
+            <div class="navbar-content-container">
+                <a href="index.html" class="logo">${logo}</a>
 
-                <div class="hidden md:flex" data->
-                    ${
-                        links.map(link => (
-                            `<a class="px-6 py-2 rounded-md " href="${link.to}">${link.title}</a>`
+                <div class="links-container">
+                    ${links.map(link => (
+                            `<a class="link" href="${link.to}">${link.title}</a>`
                         )).join('')
                     }
-                    <a class="px-6 py-2 rounded-md " href="link5">
-                        Cart (<span id="" class=""></span>)
+                    <a class="cart" href="link5">
+                        Cart (<span id="cartItem" class="">0</span>)
                     </a>
                 </div>
 
-                <button id="navButton" class="h-[50px] w-[50px] rounded-full border-2 border-slate-300 flex md:hidden justify-center items-center">
-                    <div id="openNavIcon" class="w-[22px] aspect-[1/1] flex-col justify-evenly my-flex">
-                        <div class="bg-black h-[3px] w-full rounded-xl"></div>
-                        <div class="bg-black h-[3px] w-full rounded-xl"></div>
-                        <div class="bg-black h-[3px] w-full rounded-xl"></div>
+                <button id="navButton" class="nav-button">
+                    <div id="openNavIcon" class="burger-icon bryans-flex">
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
                     </div>
-                    <div id="closeNavIcon" class="w-[35px] aspect-[1/1] text-[25px] font-bold justify-center items-center my-hidden ">
+                    <div id="closeNavIcon" class="close-icon bryans-hidden">
                         &#10005;
                     </div>
                 </button>
-                
             </div>
         </nav>
-        <div id="burgerMenu" class="w-full px-4 flex md:hidden flex-col items-center bg-slate-100 duration-300 overflow-hidden hide-burger">
+        <div id="burgerMenu" class="burger-menu hide-burger">
         ${
             links.map(link => (
-                `<a class="px-6 py-2 rounded-md " href="${link.to}">${link.title}</a>`
+                `<a class="link" href="${link.to}">${link.title}</a>`
             )).join('')
         }
         </div>
         `
-        shadowRoot.innerHTML = content   
+        shadowRoot.innerHTML = content 
+        
+        const navButton = shadowRoot.querySelector('#navButton')
+        const openNavIcon = shadowRoot.querySelector('#openNavIcon')
+        const closeNavIcon = shadowRoot.querySelector('#closeNavIcon')
+        const burgerMenu = shadowRoot.querySelector('#burgerMenu')
+
+        function manageCloseOrOpenIcon(navIsOpen:boolean) {
+            if (navIsOpen) {
+                closeNavIcon?.classList.remove("bryans-hidden")
+                closeNavIcon?.classList.add('bryans-flex')
+        
+                openNavIcon?.classList.remove("bryans-flex")
+                openNavIcon?.classList.add('bryans-hidden')
+        
+                burgerMenu?.classList.remove('hide-burger')
+                burgerMenu?.classList.add('show-burger')
+            } else {
+                closeNavIcon?.classList.remove('bryans-flex')
+                closeNavIcon?.classList.add("bryans-hidden")
+        
+                openNavIcon?.classList.remove('bryans-hidden')
+                openNavIcon?.classList.add("bryans-flex")
+                
+                burgerMenu?.classList.remove('show-burger')
+                burgerMenu?.classList.add('hide-burger')
+            }
+        }
+
+        let navIsOpen = false
+
+        navButton?.addEventListener('click', () => {
+            navIsOpen = !navIsOpen
+            manageCloseOrOpenIcon(navIsOpen)
+        })
+
     }
 }
 

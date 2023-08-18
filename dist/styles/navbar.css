@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    color: black;
+}
+
+.bryans-flex{display: flex;}
+.bryans-hidden{display: none;}
+.show-burger{ max-height: 160px; }
+.hide-burger{max-height: 0px;}  
+
+nav {
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid gainsboro;
+}
+.navbar-content-container{
+    max-width: 1240px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    font-weight: bold;
+}
+.links-container{
+    display: none;
+}
+.links-container .link {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.cart {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 15px;
+    background: rgb(211, 211, 211);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-button {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-button .burger-icon {
+    width: 22px;
+    height: 22px;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.nav-button .burger-line {
+    background: black;
+    height: 3px;
+    width: 100%;
+    border-radius: 15px;
+}
+.nav-button .close-icon {
+    font-size: 25px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+
+.burger-menu {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: rgb(241 245 249);
+    transition-duration: 300ms;
+    overflow: hidden;
+}
+.burger-menu .link {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+@media (width >= 768px) {
+    .navbar-content-container{
+        justify-content: start;
+    }
+    .links-container{
+        display: flex;
+    }
+    .nav-button{
+        display: none;
+    }
+    .burger-menu{
+        display: none;
+    }
+}
