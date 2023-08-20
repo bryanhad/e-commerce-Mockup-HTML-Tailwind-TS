@@ -12,7 +12,6 @@ class Navbar extends HTMLElement {
         const shadowRoot = this.attachShadow({ mode: 'open' });
         const content = `
         <link rel="stylesheet" href="styles/navbar.css">
-        
         <nav>
             <div class="navbar-content-container">
                 <a href="index.html" class="logo">${logo}</a>

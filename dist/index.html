@@ -8,14 +8,13 @@
     <script src="js/index.js" defer></script>
     <script src="js/components/navbar.js" defer></script>
     <script src="js/components/footer.js" defer></script>
+    <script type="module" src="js/components/products.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="flex flex-col min-h-screen">
     <my-navbar></my-navbar>
-    <main class="flex-1">
-        <div class="test">
-            this is a test
-        </div>
+    <main class="flex-1 bg-red-400 mx-auto w-full max-w-[1240px] px-8">
+        <products-list></products-list>
     </main>
     <my-footer></my-footer>
 </body>

@@ -1,9 +1,8 @@
 * {
     box-sizing: border-box;
-    padding: 0px;
     margin: 0px;
+    padding: 0px;
     text-decoration: none;
-    color: black;
 }
 
 .bryans-flex{display: flex;}
